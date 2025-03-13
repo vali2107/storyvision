@@ -76,3 +76,30 @@ main form button {
     background-color: #003366;
     color: white;
 }
+
+
+
+@media (max-width: 768px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside";
+        grid-template-columns: 1fr;
+        grid-template-rows: 13vh auto auto;
+    }
+
+    aside {
+        padding: 5vh 10vw;
+    }
+    aside button {
+        width: 40vw;
+    }
+
+    main {
+        padding: 5vh 10vw;
+    }
+    main form input, main form button {
+        width: 75vw;
+    }
+}
