@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <script src="https://kit.fontawesome.com/afdb87810b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="login-cadastro.css">
+</head>
+<body>
+    <header>
+        <!-- aqui vai o logo -->
+        <a href="index.html"><img src="" alt=""></a>
+    </header>
+    <main id="cadastro">
+        <p style="font-size:32px; font-weight: bold;">Bem-Vindo!</p>
+        <p>Cadastre-se para acessar o curso</p>
+
+        <form action="" id="cadastro_form">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" name="nome" required>
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+            <label for="confirm_senha">Confirme a senha</label>
+            <input type="password" id="confirm_senha" name="confirm_senha" required>
+            <div style="font-size:16px" id="config_senha">
+                <div id="mostrar_senha">
+                    <!-- <i class="fa-solid fa-eye"></i> -->
+                    <i class="fa-solid fa-eye-slash"></i>
+                    <p>Mostrar senha</p>
+                </div>
+            </div>
+            <button type="submit" id="botao_cadastro">Cadastro</button>
+        </form>
+    </main>
+    <aside id="red_login">
+        <p>Já tem conta?</p>
+        <p style="font-size:32px; font-weight: bold;">Faça Log-In</p>
+        <button id="red_login_botao"><a href="login.html">Aqui</a></button>
+    </aside>
+</body>
+</html>
