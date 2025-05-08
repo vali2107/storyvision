@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log-In</title>
     <script src="https://kit.fontawesome.com/afdb87810b.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="login-cadastro.css">
+    <link rel="stylesheet" href="./css/usuario.css">
 </head>
 <body>
     <header>
         <!-- aqui vai o logo -->
         <a href="index.html"><img src="" alt=""></a>
     </header>
+
     <main id="login">
         <p style="font-size:32px; font-weight: bold;">Olá</p>
         <p>Faça Log-In para acessar sua conta.</p>
@@ -19,9 +20,11 @@
         <form action="" id="login_form">
             <label for="email">E-Mail</label>
             <input type="email" id="email" name="email" required>
+
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha" required>
-            <div style="font-size:16px" id="config_senha">
+
+            <div style="font-size:16px" id="visibilidade_senha">
                 <div id="mostrar_senha">
                     <!-- <i class="fa-solid fa-eye"></i> -->
                     <i class="fa-solid fa-eye-slash"></i>
@@ -29,13 +32,17 @@
                 </div>
                 <a href="">Esqueceu a senha?</a>
             </div>
+
             <button type="submit" id="botao_login">Log-In</button>
         </form>
     </main>
+
     <aside id="red_cadastro">
         <p>Não tem conta ainda?</p>
         <p style="font-size:32px; font-weight: bold;">Faça seu cadastro</p>
         <button id="red_cadastro_botao"><a href="cadastro.html">Aqui</a></button>
     </aside>
+
+    <script src="./js/login.js"></script>
 </body>
 </html>

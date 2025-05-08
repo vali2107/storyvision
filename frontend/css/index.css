@@ -1,0 +1,41 @@
+nav {
+    width: 11vw;
+    display: flex;
+    align-items: center;
+}
+
+nav > :last-child {
+    padding:12px;
+    border-radius: 25px;
+    background-color: #003366;
+    color:white;
+}
+
+#introducao {
+    background-color:#003366;
+    color:white;
+}
+
+.texto {
+    width:70vw;
+    height:70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    padding:3vw;
+}
+.texto a {
+    width:15vw;
+    padding:12px;
+    align-self: center;
+    border-radius: 25px;
+    background-color: #FF9800;
+    color:white;
+    text-align: center;
+    text-decoration: none;
+}
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
