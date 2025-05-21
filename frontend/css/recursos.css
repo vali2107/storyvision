@@ -1,0 +1,96 @@
+/* TOPO */
+#topo {
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 3vw 0 3vw;
+}
+
+h1 {
+    font-size:32px;
+}
+
+#topo button {
+    height:6vh;
+    align-self: center;
+    justify-self: center;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 20px;
+    background-color: #FF9800;
+}
+
+/* FORMS (ADIÇÃO E EDIÇÃO) */
+#editar {
+    display: none;
+}
+
+form {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 2.5vw;
+    margin: auto;
+    background-color: #EDEDED;
+    position: relative;
+}
+
+#inserir_recurso_form {
+    display:none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#editar_recurso_form {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form input  {
+    width: 30vw;
+    padding: 8px;
+    border: 1px black solid;
+    border-radius: 20px;
+}
+
+#inserir_recurso_botao, #editar_recurso_botao {
+    width: 10vw;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background-color: #003366;
+    color: white;
+}
+
+#fechar_add, #fechar_editar {
+    position: absolute;
+    right: 5px;
+    top: 1px;
+    border: none;
+}
+
+
+/* DISPLAY RECURSOS */
+#recursos_tudo {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3vw;
+    row-gap: 3vw;
+    margin: 3vw;
+}
+.item {
+    display: flex;
+    flex-direction: column;
+}
+.item img {
+    height: 6vw;
+    width: auto;
+    /* evita que a imagem distorça */
+    object-fit: contain;
+    border: none;
+}

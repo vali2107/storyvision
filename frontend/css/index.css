@@ -1,9 +1,4 @@
-nav {
-    width: 11vw;
-    display: flex;
-    align-items: center;
-}
-
+/* HEADER */
 nav > :last-child {
     padding:12px;
     border-radius: 25px;
@@ -11,31 +6,34 @@ nav > :last-child {
     color:white;
 }
 
+/* MAIN */
 #introducao {
     background-color:#003366;
     color:white;
 }
 
 .texto {
-    width:70vw;
-    height:70vh;
+    width:60vw;
+    height:65vh;
     display: flex;
     flex-direction: column;
     justify-content:space-evenly;
-    padding:3vw;
+    padding: 0 5vh;
 }
+
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
 .texto a {
     width:15vw;
     padding:12px;
     align-self: center;
     border-radius: 25px;
     background-color: #FF9800;
-    color:white;
+    color:black;
     text-align: center;
     text-decoration: none;
-}
-h1 {
-    font-size: 32px;
-    font-weight: bold;
-    letter-spacing: 1px;
 }

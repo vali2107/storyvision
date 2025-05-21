@@ -18,7 +18,7 @@
         <p>Cadastre-se para acessar o curso</p>
 
         <form action="" id="cadastro_form">
-            <label for="nome">Nome Completo</label>
+            <label for="nome">Nome</label>
             <input type="text" id="nome" name="nome" required>
 
             <label for="email">E-Mail</label>
@@ -26,14 +26,23 @@
 
             <label for="senha">Senha</label>
             <input type="password" id="senha" name="senha" required>
-
             <div style="font-size:16px" id="visibilidade_senha">
                 <div id="mostrar_senha">
-                    <!-- <i class="fa-solid fa-eye"></i> -->
-                    <i class="fa-solid fa-eye-slash"></i>
-                    <p>Mostrar senha</p>
+                    <i class="fa-solid fa-eye-slash" onclick="mostrarSenha()"></i>
+                    <p onclick="mostrarSenha()">Mostrar senha</p>
                 </div>
             </div>
+
+            <label for="nascimento">Data de nascimento</label>
+            <input type="date" id="nascimento" name="nascimento">
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+                <option value="estudante">Estudante</option>
+                <option value="profissional">Profissional</option>
+                <option value="ambos">Ambos</option>
+                <option value="nenhum">Nenhum</option>
+            </select>
 
             <button type="submit" id="botao_cadastro">Cadastro</button>
         </form>

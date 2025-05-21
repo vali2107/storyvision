@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,29 +16,35 @@
             <!-- colocar links -->
             <a href="">Aulas</a>
             <a href="">Exercícios</a>
-            <a href="">Materiais</a>
-            <a href=""><i class="fa-solid fa-user"></i></a>
+            <a href="./materiais.html">Materiais</a>
+            <a href="./perfil.html"><i class="fa-solid fa-user"></i></a>
         </nav>
     </header>
 
-    <main>
+    <main id="main_perfil">
         <h1>Seu perfil</h1>
-        <button>Editar</button>
-        <div id="card_nome" class="card">
-            <p>Nome</p>
-            <p id="nome" class="tag_perfil"></p>
+        <button onclick="abrirEdicao()" id="abrir_edicao">Editar</button>
+        <div class="info_perfil">
+            <div id="card_um">
+                <p>Nome</p>
+                <p id="nome" class="tag_perfil">${usuario.nome}</p>
+            </div>
+            <div id="card_dois">
+                <p>Email</p>
+                <p id="email" class="tag_perfil">${usuario.email}</p>
+            </div>
+            <div id="card_tres" class="card">
+                <p>Data de nascimento</p>
+                <p id="nascimento" class="tag_perfil">${nascimentoFormatado}</p>
+            </div>
+            <div id="card_quatro" class="card">
+                <p>Categoria</p>
+                <p id="categoria" class="tag_perfil">${usuario.categoria}</p>
+            </div>
         </div>
-        <div id="card_email" class="card">
-            <p>Email</p>
-            <p id="email" class="tag_perfil"></p>
-        </div>
-        <div id="card_genero" class="card">
-            <p>Gênero</p>
-            <p id="genero" class="tag_perfil"></p>
-        </div>
-        <div id="card_idade" class="card">
-            <p>Idade</p>
-            <p id="idade" class="tag_perfil"></p>
+        <div id="botoes">
+            <button onclick="logout()">Logout</button>
+            <button onclick="deletarUsuario()">Deletar conta</button>
         </div>
     </main>
 
@@ -50,5 +56,7 @@
         <a href="">Suporte</a>
         <a href="">Sobre nós</a>
     </footer>
+
+    <script src="./js/perfil.js"></script>
 </body>
 </html>

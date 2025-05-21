@@ -7,7 +7,7 @@ body {
     display: grid;
     grid-template-areas: "header header" "main aside";
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 12vh 90vh;
+    grid-template-rows: 12vh 120vh;
 
     font-family: "Inter", sans-serif;
     font-size: 18px;
@@ -18,7 +18,7 @@ body {
 aside {
     grid-area: aside;
     background-color: #003366;
-    padding: 8vh 5vw;
+    padding: 5vh 3vw;
     color:white;
 }
 aside button {
@@ -37,7 +37,7 @@ aside button a {
 /* MAIN */
 main {
     grid-area: main;
-    padding: 8vh 20vw;
+    padding: 5vh 20vw;
 }
 main p {
     margin: 0 0 30px 0;
@@ -46,7 +46,7 @@ main form {
     display:flex;
     flex-direction: column;
 }
-main form input {
+main form input , #categoria{
     width: 33vw;
     height: 40px;
     margin: 10px 0px 25px 0px;

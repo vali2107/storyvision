@@ -1,3 +1,4 @@
+/* GERAL */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -6,19 +7,22 @@
     font-size: 18px;
 }
 
+/* HEADER */
 header {
     height: 12vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 3%;
+    padding: 3% 2%;
     background-color: #D9D9D9;
 }
 
 nav {
-    width: 20vw;
+    width: 50vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
 }
 
 nav a {
@@ -26,10 +30,12 @@ nav a {
     text-decoration: none;
 }
 
+/* MAIN */
 main {
-    height:88vh;
+    min-height:88vh;
 }
 
+/* FOOTER */
 footer {
     height: 20vh;
     width:50vw;

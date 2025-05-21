@@ -1,3 +1,4 @@
+// faz o login e manda informações do usuário para o localStorage
 document.getElementById("login_form").addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -18,12 +19,34 @@ document.getElementById("login_form").addEventListener('submit', async (e) => {
 
     if(results.success) {
         let userData = results.data;
+
+        if (userData.nascimento) {
+            userData.nascimento = userData.nascimento.split('T')[0]
+        }
         console.log(userData)
         localStorage.setItem('informacoes', JSON.stringify(userData))
         
         alert(results.message)
-        // window.location.href = './index.html';
+        window.location.href = "perfil.html"
     } else {
         alert(results.message)
     }
 })
+
+// mostra a senha, colocando type = text
+async function mostrarSenha() {
+    document.getElementById('senha').setAttribute('type', 'text')
+    document.getElementById('mostrar_senha').innerHTML = `
+        <i class="fa-solid fa-eye" onclick="esconderSenha())"></i>
+        <p onclick="esconderSenha()">Esconder senha</p>
+    `
+}
+
+// esconde a senha, colocando type = password
+async function esconderSenha() {
+    document.getElementById('senha').setAttribute('type', 'password')
+    document.getElementById('mostrar_senha').innerHTML = `
+        <i class="fa-solid fa-eye-slash" onclick="mostrarSenha()"></i>
+        <p onclick="mostrarSenha()">Mostrar senha</p>
+    `
+}
