@@ -1,0 +1,26 @@
+.chat-layout {
+    --chat--color-primary: #00AEEF;
+	--chat--color-primary-shade-50: #024f9d;
+	--chat--color-primary-shade-100: #003366;
+	--chat--color-secondary: #FF9800;
+	--chat--color-secondary-shade-50: #b66d00;
+	--chat--color-white: #ffffff;
+	--chat--color-light: #F2F2F2;
+	--chat--color-light-shade-50: #f3f3f3;
+	--chat--color-light-shade-100: #f4f4f4;
+	--chat--color-medium: #D9D9D9;
+	--chat--color-dark: #1d1d1d;
+	--chat--color-disabled: #777980;
+	--chat--color-typing: #404040;
+
+	--chat--border-radius: 50px;
+    --chat--textarea--height: 10vh;
+
+	--chat--message--bot--background: var(--chat--color-medium);
+	--chat--message--bot--color: var(--chat--color-dark);
+	--chat--message--user--background: var(--chat--color-primary);
+}
+
+.chat-header {
+    display: none !important;
+}

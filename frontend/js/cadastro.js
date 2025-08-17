@@ -10,7 +10,7 @@ document.getElementById("cadastro_form").addEventListener('submit', async (e) =>
 
     const data = {nome, email, senha, nascimento, categoria}
 
-    const response = await fetch('http://localhost:3006/usuario/cadastrar', {
+    const response = await fetch('http://localhost:3006/usuarios/cadastrar', {
         method: 'POST',
         headers: {
             "Content-Type":"application/json"
@@ -30,7 +30,7 @@ document.getElementById("cadastro_form").addEventListener('submit', async (e) =>
         localStorage.setItem('informacoes', JSON.stringify(userData))
 
         alert(results.message)
-        window.location.href = "perfil.html"
+        window.location.href = "modulos.html"
     } else {
         alert(results.message)
     }

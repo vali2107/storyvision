@@ -1,12 +1,23 @@
-// carrega a página do perfil, com as informações do usuário
+// adiciona header e footer na página
+fetch('/frontend/reutilizaveis/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+fetch('/frontend/reutilizaveis/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+
+    // carrega a página do perfil, com as informações do usuário
 if(document.getElementById("main_perfil")) {
     document.addEventListener("DOMContentLoaded", function() {
         const informacoesUsuario = localStorage.getItem('informacoes');
         const usuario = JSON.parse(informacoesUsuario); 
 
         const nascimento = usuario.nascimento;
-        const [ano, mes, dia] = nascimento.split('-');
-        const nascimentoFormatado = `${dia}/${mes}/${ano}`
+        if (nascimento !== null) {
+            const [ano, mes, dia] = nascimento.split('-');
+            const nascimento = `${dia}/${mes}/${ano}`
+        }
 
         let html = document.getElementById('main_perfil')
         html.innerHTML = '';
@@ -24,7 +35,7 @@ if(document.getElementById("main_perfil")) {
                     </div>
                     <div id="card_tres" class="card">
                         <p>Data de nascimento</p>
-                        <p id="nascimento" class="tag_perfil">${nascimentoFormatado}</p>
+                        <p id="nascimento" class="tag_perfil">${nascimento}</p>
                     </div>
                     <div id="card_quatro" class="card">
                         <p>Categoria</p>
@@ -95,7 +106,7 @@ async function editarUsuario() {
         idUsuario
     };
 
-    const response = await fetch('http://localhost:3006/usuario/editar', {
+    const response = await fetch('http://localhost:3006/usuarios/', {
         method: 'PUT',
         headers: {
             "Content-Type": "application/json"
@@ -126,6 +137,7 @@ async function editarUsuario() {
 // logout usuário
 function logout() {
     localStorage.removeItem('informacoes')
+    localStorage.removeItem('n8n-chat/sessionId')
     window.location.href = "index.html"
 }
 
@@ -137,7 +149,7 @@ async function deletarUsuario() {
         const informacoesUsuario = localStorage.getItem('informacoes');
         const usuario = JSON.parse(informacoesUsuario);
 
-        const response = await fetch(`http://localhost:3006/usuario/deletar/${usuario.id}`, {
+        const response = await fetch(`http://localhost:3006/usuarios/${usuario.id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"

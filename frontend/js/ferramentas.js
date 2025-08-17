@@ -1,7 +1,16 @@
+// adiciona header e footer na página
+fetch('/frontend/reutilizaveis/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+fetch('/frontend/reutilizaveis/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+
 // coloca a opção de adicionar ferramenta, caso seja administrador
 const informacoesUsuario = localStorage.getItem('informacoes');
 const usuario = JSON.parse(informacoesUsuario);
-if (usuario.tipoConta === "Adm") {
+if (usuario.tipo_conta === "Adm") {
     let html = document.getElementById("main")
     html.innerHTML = ''
     html.innerHTML = `
@@ -56,7 +65,7 @@ async function inserirFerramenta(event) {
 
     console.log(formData)
 
-    const response = await fetch('http://localhost:3006/ferramenta', {
+    const response = await fetch('http://localhost:3006/ferramentas', {
         method: 'POST',
         body: formData
     })
@@ -118,7 +127,7 @@ async function listarFerramentas() {
                         <p class="nome">${ferramenta.nome}</p>
                     `;
 
-                    if (usuario.tipoConta === "Adm") {
+                    if (usuario.tipo_conta === "Adm") {
                         card.innerHTML += `
                             <div class="acoes">
                                 <i class="fa-solid fa-pen-to-square" onclick="editarFerramenta(${ferramenta.id}, '${ferramenta.nome}', '${ferramenta.descricao}', '${ferramenta.link}', '${ferramenta.categoria}')"></i>
@@ -187,7 +196,7 @@ async function enviarEdicao(event, id) {
 
     console.log(formData)
 
-    const response = await fetch(`http://localhost:3006/ferramenta`, {
+    const response = await fetch(`http://localhost:3006/ferramentas`, {
         method: 'PUT',
         body: formData
     })
@@ -208,7 +217,7 @@ async function deletarFerramenta(id) {
     const confirmacao = confirm('Tem certeza?')
 
     if (confirmacao) {
-        const response = await fetch(`http://localhost:3006/ferramenta/${id}`, {
+        const response = await fetch(`http://localhost:3006/ferramentas/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"

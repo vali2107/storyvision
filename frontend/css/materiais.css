@@ -27,7 +27,7 @@ h2 {
     column-gap: 3vw;
     margin: 3vw;
 }
-#cards_recursos {
+#cards_recursos, #cards_dicas {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 3vw;

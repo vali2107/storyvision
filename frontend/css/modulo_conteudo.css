@@ -1,0 +1,53 @@
+#informacoes_modulo {
+    height: 88vh;
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw 1fr 5vw;
+    grid-template-rows: 5vw 2fr 5vw 1fr 5vw;
+    grid-template-areas: '. . . . .'
+                         '. dados . img .'
+                         '. . . img .'
+                         '. acoes . img .'
+                         '. . . . .';
+    background-color: #003366;
+    color: white;
+}
+
+#dados {
+    grid-area: dados;
+}
+h1 {
+    font-size:32px;
+    margin-bottom: 3vw;
+}
+#dados p {
+    margin-bottom: 30px;
+}
+
+#acoes {
+    grid-area: acoes;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-around;
+}
+#acoes button {
+    height:6vh;
+    align-self: center;
+    justify-self: center;
+    padding: 10px 20px;
+    border:none;
+    border-radius: 20px;
+    background-color: #FF9800;
+}
+
+#informacoes_modulo img {
+    grid-area: img;
+    height: 70vh;
+    justify-self: end;
+}
+
+
+
+
+
+

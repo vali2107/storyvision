@@ -1,7 +1,16 @@
+// adiciona header e footer na página
+fetch('/frontend/reutilizaveis/header.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('header').innerHTML = data);
+
+fetch('/frontend/reutilizaveis/footer.html')
+    .then(res => res.text())
+    .then(data => document.getElementById('footer').innerHTML = data);
+
 // coloca a opção de adicionar recurso somente para administradores
 const informacoesUsuario = localStorage.getItem('informacoes');
 const usuario = JSON.parse(informacoesUsuario);
-if (usuario.tipoConta === "Adm") {
+if (usuario.tipo_conta === "Adm") {
     let html = document.getElementById("main")
     html.innerHTML = ''
     html.innerHTML = `
@@ -55,7 +64,7 @@ async function inserirRecurso(event) {
 
     console.log(formData)
 
-    const response = await fetch('http://localhost:3006/recurso', {
+    const response = await fetch('http://localhost:3006/recursos', {
         method: 'POST',
         body: formData
     })
@@ -96,7 +105,7 @@ async function listarRecursos() {
                 <p>${recurso.descricao}</p>
             `;
 
-            if (usuario.tipoConta === "Adm") {
+            if (usuario.tipo_conta === "Adm") {
                 card.innerHTML += `
                     <div class="acoes">
                         <i class="fa-solid fa-pen-to-square" onclick="editarRecurso(${recurso.id}, '${recurso.titulo}', '${recurso.descricao}', '${recurso.link}', '${recurso.tipo}')"></i>
@@ -160,7 +169,7 @@ async function enviarEdicao(event, id) {
 
     console.log(formData)
 
-    const response = await fetch(`http://localhost:3006/recurso`, {
+    const response = await fetch(`http://localhost:3006/recursos`, {
         method: 'PUT',
         body: formData
     })
@@ -181,7 +190,7 @@ async function deletarRecurso(id) {
     const confirmacao = confirm('Tem certeza?')
 
     if (confirmacao) {
-        const response = await fetch(`http://localhost:3006/recurso/${id}`, {
+        const response = await fetch(`http://localhost:3006/recursos/${id}`, {
             method: 'DELETE',
             headers: {
                 "Content-Type": "application/json"
