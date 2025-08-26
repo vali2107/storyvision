@@ -30,6 +30,10 @@ nav a {
     text-decoration: none;
 }
 
+header img {
+    height: 5vh;
+}
+
 /* MAIN */
 main {
     min-height:88vh;
@@ -50,5 +54,5 @@ footer a {
 }
 
 footer img {
-    height:15vh;
+    height:6vh;
 }
