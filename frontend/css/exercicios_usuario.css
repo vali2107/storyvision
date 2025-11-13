@@ -1,0 +1,69 @@
+/* TOPO */
+#topo {
+    display: flex;
+    justify-content: space-between;
+    padding: 3vw 3vw 0 3vw;
+}
+
+h1 {
+    font-size:32px;
+}
+
+/* DISPLAY EXERCÍCIOS */
+#exercicios_tudo {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 5vw;
+    margin: 3vw;
+}
+
+#lista_exercicios {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+#lista_exercicios div {
+    height: 8vh;
+    background-color:#EDEDED;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-bottom: none;
+}
+
+#lista_exercicios div:last-child {
+    border-bottom: 1px solid black;
+}
+
+#exercicio_aberto {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+#exercicio_aberto textarea {
+    width: 50vw;
+    padding: 8px;
+}
+
+#exercicio_aberto button {
+    width: 12vw;
+    padding: 8px;
+    border: none;
+    border-radius: 20px;
+    background-color: #0052a5;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+form label {
+    display: flex;
+    gap: 8px;
+}

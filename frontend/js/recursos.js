@@ -74,7 +74,7 @@ async function inserirRecurso(event) {
     if(results.success) {        
         alert(results.message)
         fecharAdd()
-        listarFerramentas()
+        listarRecursos()
     } else {
         alert(results.message)
     }

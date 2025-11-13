@@ -109,7 +109,7 @@ async function listarModulos() {
                 <img src="${images + modulo.foto}" alt="${modulo.titulo}">
                 <div class="base">
                     <p class="titulo">${modulo.titulo}</p>
-                    <button class="abrir_modulo_botao" onclick="abrirModulo(${modulo.id}, '${modulo.titulo}', '${modulo.descricao}', '${modulo.duracao}', '${modulo.resumo}', '${modulo.foto}')">Ver</button>
+                    <button class="abrir_modulo_botao" onclick="abrirModulo('${usuario.tipo_conta}', ${modulo.id}, '${modulo.titulo}', '${modulo.descricao}', '${modulo.duracao}', '${modulo.resumo}', '${modulo.foto}')">Ver</button>
                 </div>
             `;
 

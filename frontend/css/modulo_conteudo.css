@@ -42,7 +42,7 @@ h1 {
 
 #informacoes_modulo img {
     grid-area: img;
-    height: 70vh;
+    width: 50vw;
     justify-self: end;
 }
 

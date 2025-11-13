@@ -113,3 +113,5 @@ CREATE TABLE tickets (
     
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+INSERT INTO usuarios(nome, email, senha, tipo_conta) VALUES ("Valentina", "adm@gmail.com", "1234", "adm");
